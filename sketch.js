@@ -41,13 +41,67 @@ function setup() {
     strokeCap(SQUARE);
     stroke(115, random(27, 37), random(67, 77));
     strokeWeight(random(30, 45));
-    line(random(-10, 10), random(-200, -250), random(-10, 10), random(50, 200));
+    line(random(-10, 10), random(-200, -250), random(-10, 10), 180);
     stroke(115, random(27, 37), random(67, 77));
     strokeWeight(random(30, 45));
-    line(random(-10, 10)-200, random(-200, -250), random(-10, 10)-200, random(50, 200));
+    line(random(-10, 10)-200, random(-200, -250), random(-10, 10)-200, 180);
     stroke(115, random(27, 37), random(67, 77));
     strokeWeight(random(30, 45));
-    line(random(-10, 10)+200, random(-200, -250), random(-10, 10)+200, random(50, 200));
+    line(random(-10, 10)+200, random(-200, -250), random(-10, 10)+200, 180);
+
+    fill("#d9cce3");
+    noStroke();
+    beginShape();
+    vertex(-100, -300);
+    vertex(100, -300);
+    vertex(100, random(-230, -200));
+    vertex(-100, random(-230, -200));
+    endShape();
+
+    fill("#d9cce3");
+    noStroke();
+    beginShape();
+    vertex(-100-200, -300);
+    vertex(100-200, -300);
+    vertex(100-200, random(-230, -200));
+    vertex(-100-200, random(-230, -200));
+    endShape();
+
+    fill("#d9cce3");
+    noStroke();
+    beginShape();
+    vertex(-100+200, -300);
+    vertex(100+200, -300);
+    vertex(100+200, random(-230, -200));
+    vertex(-100+200, random(-230, -200));
+    endShape();
+
+    fill(255);
+    noStroke();
+    beginShape();
+    vertex(-50, random(50, 180));
+    vertex(50, random(50, 180));
+    vertex(50, 200);
+    vertex(-50, 200);
+    endShape();
+
+    fill(255);
+    noStroke();
+    beginShape();
+    vertex(-50-200, random(50, 180));
+    vertex(50-200, random(50, 180));
+    vertex(50-200, 200);
+    vertex(-50-200, 200);
+    endShape();
+
+    fill(255);
+    noStroke();
+    beginShape();
+    vertex(-50+200, random(50, 180));
+    vertex(50+200, random(50, 180));
+    vertex(50+200, 200);
+    vertex(-50+200, 200);
+    endShape();
 
     image(leaves1, -180, random(-165, -175));
     image(leaves3, 185, random(-170, -180));
