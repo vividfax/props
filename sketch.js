@@ -82,7 +82,6 @@ function setup() {
 
 function display() {
 
-    console.log(frameCount);
     //if (frameCount % 3 != 1) return;
     push();
     translate(width/2, height/2);
