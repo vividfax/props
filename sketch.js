@@ -1,4 +1,14 @@
 let roots = [];
+let leaves1;
+let leaves2;
+let leaves3;
+
+function preload() {
+
+    leaves1 = loadImage("./images/leaves1.png");
+    leaves2 = loadImage("./images/leaves2.png");
+    leaves3 = loadImage("./images/leaves3.png");
+}
 
 function setup() {
 
@@ -10,6 +20,7 @@ function setup() {
     background("#d9cce3");
     noStroke();
     rectMode(CENTER);
+    imageMode(CENTER);
 
     push();
     translate(width/2, height/2);
@@ -38,6 +49,10 @@ function setup() {
     strokeWeight(random(30, 45));
     line(random(-10, 10)+200, random(-200, -250), random(-10, 10)+200, random(50, 200));
 
+    image(leaves1, -180, random(-165, -175));
+    image(leaves3, 185, random(-170, -180));
+    image(leaves2, -15, random(-165, -175));
+
     let originY1 = random(-80, -30);
     let originY2 = random(-80, -30);
     let originY3 = random(-80, -30);
@@ -50,34 +65,24 @@ function setup() {
 
     stroke(100, 0.07);
     strokeWeight(2);
-    line(-40, -96, 40, -96);
-    line(-40-200, -96, 40-200, -96);
-    line(-40+200, -96, 40+200, -96);
+    line(-30, -96, 30, -96);
+    line(-30-200, -96, 30-200, -96);
+    line(-30+200, -96, 30+200, -96);
     stroke(100, 0.07);
     strokeWeight(3);
-    line(-40, -148.5, 40, -148.5);
-    line(-40-200, -148.5, 40-200, -148.5);
-    line(-40+200, -148.5, 40+200, -148.5);
+    line(-30, -148.5, 30, -148.5);
+    line(-30-200, -148.5, 30-200, -148.5);
+    line(-30+200, -148.5, 30+200, -148.5);
 
     roots.push(new Root(0, originY1, 0, originY1));
     roots.push(new Root(-200, originY2, -200, originY2));
     roots.push(new Root(200, originY3, 200, originY3));
 
-
-    for (let i = 0; i < roots.length; i++) {
-        roots[i].update();
-        roots[i].display();
-    }
-
-    fill("#bcb8bf");
-    rect(0, 120, 700, 50, 20);
-    rect(0, 265, 700, 40, 20);
-    rect(-320, 250, 60, 300, 20);
-    rect(320, 250, 60, 300, 20);
-
     pop();
 
     noLoop();
+
+    display();
 }
 
 function display() {
@@ -90,11 +95,7 @@ function display() {
         roots[i].update();
         roots[i].display();
     }
-    pop();
 
-
-    push();
-    translate(width/2, height/2);
     fill("#bcb8bf");
     noStroke();
     rect(0, 120, 700, 50, 20);
