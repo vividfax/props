@@ -25,6 +25,10 @@ function setup() {
     push();
     translate(width/2, height/2);
 
+    let originY1 = random(-80, -30);
+    let originY2 = random(-80, -30);
+    let originY3 = random(-80, -30);
+
     fill(100);
     rect(0, 0, 100, 300, 4);
     rect(0, 100, 100, 300, 100);
@@ -38,16 +42,37 @@ function setup() {
     rect(200, -122, 94, 50, 4);
     rect(-200, -122, 94, 50, 4);
 
-    strokeCap(SQUARE);
+    let stemThickness1 = random(25, 35);
+    let stemThickness2 = random(25, 35);
+    let stemThickness3 = random(25, 35);
+
     stroke(115, random(27, 37), random(67, 77));
-    strokeWeight(random(30, 45));
-    line(random(-10, 10), random(-200, -250), random(-10, 10), 180);
+    strokeWeight(stemThickness1-random(3));
+    line(random(-10, 10), -250, 0, originY1+3);
+    strokeWeight(stemThickness1);
+    line(0, originY1+3, random(-10, 10), 170);
+    line(0, originY1+3, random(-10, 10), 170);
+
     stroke(115, random(27, 37), random(67, 77));
-    strokeWeight(random(30, 45));
-    line(random(-10, 10)-200, random(-200, -250), random(-10, 10)-200, 180);
+    strokeWeight(stemThickness2-random(3));
+    line(random(-10, 10)-200, -250, 0-200, originY2+3);
+    strokeWeight(stemThickness2);
+    line(0-200, originY2+3, random(-10, 10)-200, 170);
+    line(0-200, originY2+3, random(-10, 10)-200, 170);
+
     stroke(115, random(27, 37), random(67, 77));
-    strokeWeight(random(30, 45));
-    line(random(-10, 10)+200, random(-200, -250), random(-10, 10)+200, 180);
+    strokeWeight(stemThickness3-random(3));
+    line(random(-10, 10)+200, -250, 0+200, originY3+3);
+    strokeWeight(stemThickness3);
+    line(0+200, originY3+3, random(-10, 10)+200, 170);
+    line(0+200, originY3+3, random(-10, 10)+200, 170);
+
+    // stroke(115, random(27, 37), random(67, 77));
+    // strokeWeight(random(30, 45));
+    // line(random(-10, 10)-200, random(-200, -250), random(-10, 10)-200, 180);
+    // stroke(115, random(27, 37), random(67, 77));
+    // strokeWeight(random(30, 45));
+    // line(random(-10, 10)+200, random(-200, -250), random(-10, 10)+200, 180);
 
     fill("#d9cce3");
     noStroke();
@@ -106,10 +131,6 @@ function setup() {
     image(leaves1, -180, random(-165, -175));
     image(leaves3, 185, random(-170, -180));
     image(leaves2, -15, random(-165, -175));
-
-    let originY1 = random(-80, -30);
-    let originY2 = random(-80, -30);
-    let originY3 = random(-80, -30);
 
     fill("#7b9c78");
     noStroke();
