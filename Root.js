@@ -16,7 +16,7 @@ class Root {
 
     update() {
 
-        if (this.y > 200) {
+        if (this.y > 200 && dist(this.x, this.y, this.originX, 200) > 47) {
             this.dead = true;
         }
 
