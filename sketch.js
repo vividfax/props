@@ -3,11 +3,15 @@ let leaves1;
 let leaves2;
 let leaves3;
 
+let cowboyHat;
+let cowboyMode;
+
 function preload() {
 
     leaves1 = loadImage("./images/leaves1.png");
     leaves2 = loadImage("./images/leaves2.png");
     leaves3 = loadImage("./images/leaves3.png");
+    cowboyHat = loadImage("./images/cowboy-hat.png");
 }
 
 function setup() {
@@ -177,6 +181,28 @@ function display() {
     rect(0, 265, 700, 40, 20);
     rect(-320, 250, 60, 300, 20);
     rect(320, 250, 60, 300, 20);
+
+    pop();
+}
+
+function keyPressed() {
+
+    if (cowboyMode) return;
+
+    if (keyIsDown(68) && keyIsDown(65) && keyIsDown(78)) {
+        cowboyMode = true;
+        displayCowboyHat();
+    }
+}
+
+function displayCowboyHat() {
+
+    push();
+    translate(width/2, height/2);
+
+    image(cowboyHat, 0, -200);
+    image(cowboyHat, -200, -200);
+    image(cowboyHat, 200, -200);
 
     pop();
 }
