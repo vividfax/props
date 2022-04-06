@@ -19,7 +19,7 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     colorMode(HSB);
     //frameRate(1);
-    setInterval(display, 1000/0.02);
+    setInterval(display, 1000/0.04);
 
     background("#d9cce3");
     noStroke();
