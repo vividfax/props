@@ -16,7 +16,7 @@ function preload() {
 
 function setup() {
 
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(750, 850);
     colorMode(HSB);
     //frameRate(1);
     setInterval(display, 1000/0.04);
